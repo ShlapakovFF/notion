@@ -102,7 +102,6 @@ void StartSpiTask(void *argument)
 
 		if (osMessageQueueGet(spiQueueHandle, spiBuffer, NULL, 0) == osOK) {
 			HAL_SPI_Transmit(&hspi1, spiBuffer, strlen((char *)spiBuffer), 10);
-			//HAL_UART_Transmit(&huart1, spiBuffer, strlen((char *)spiBuffer), 20);
 		}
 		osDelay(1);
 	}
